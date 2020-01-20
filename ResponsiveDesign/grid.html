@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gabriela Gradinaru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design - Grid</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            max-width: 960px;
+            width: 90%;
+            margin: 10vmin auto;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        h1 {
+            font-weight: normal;
+        }
+
+        .container {
+            display: grid;
+            height: calc(120px*2 + 50px); /* div.tile height = 120px; 50px = razmak izmedju reda, proizvoljan broj */
+            padding: 3vmin 0;
+            grid-template-columns: repeat(5, 140px);
+            grid-template-rows: 120px;
+            grid-gap: 16px;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .tile {
+            width: 140px; /*originalna velicina slike: 800/533; 800/5.7=140px */
+            border: 1px solid #f1f1f1;
+            box-shadow: 4px 4px 8px #efefef;
+            border-radius: 8px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .tile-background {
+            height: 93px; /* 533/5.7=93px */
+            background-color: rgb(84, 147, 206);
+            background-image: url(placeholder-image.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tile-text {
+            font-size: 14px;
+            margin: 4px 0;
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 160px);
+                grid-template-rows: 133px;
+                grid-gap: 16px;
+                height: calc(133px*4 + 90px); /* div.tile height = 133px; 90px = razmak izmedju redova */
+                justify-content: space-between;
+                align-content: space-between;
+            }
+            .tile {
+                width: 160px; /* 800/5=160px */
+            }
+            .tile-background {
+                height: 106px; /* 533/5=106px */
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            .container {
+                grid-template-columns: repeat(1, 180px);
+                grid-template-rows: 154px;
+                height: calc(154px*10 + 150px); /* div.tile height = 154px; 150px = razmak izmedju redova */
+                justify-content: center;
+                align-content: space-between;
+            }
+            .tile {
+                width: 180px;
+            }
+            .tile-background {
+                height: 120px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .tile-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Gallery Heading</h1>
+
+    <div class="container">
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        <div class="tile">
+            <div class="tile-background"></div>
+            <div class="tile-text">Image Title</div>
+        </div>
+        </div>
+
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+        quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, 
+        rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. 
+        Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, 
+        nim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque 
+        rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. 
+        Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+        blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero 
+        venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet 
+        nibh. Donec sodales sagittis magna.
+     </p>
+
+
+</body>
+</html>

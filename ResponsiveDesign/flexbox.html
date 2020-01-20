@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="author" content="Gabriela Gradinaru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design - Flexbox</title>
+    <style>
+
+        body {
+            max-width: 960px;
+            width: 90%;
+            margin: 70px auto;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            font-weight: normal;
+        }
+
+        .row {
+            display: -webkit-box;
+            display: -moz-flexbox;
+            display: -ms-flexbox;
+            display: flex;
+            flex-flow: row wrap;
+            height: calc(120px*2 + 80px); /*div.tile height (visina plocice) = 120px; 80px = razmak izmedju plocice, proizvoljan broj */
+            margin: 20px 0;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        .column {
+            padding: 16px;
+            flex: none;
+        }
+
+        .tile {
+            width: 140px; /*originalna velicina slike: 800/533; 800/5.7=140px */
+            border: 1px solid #f1f1f1;
+            box-shadow: 4px 4px 8px #efefef;
+            border-radius: 8px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .tile-background {
+            height: 93px; /* 533/5.7=93px */
+            background-color: rgb(87, 151, 204);
+            background-image: url(placeholder-image.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tile-text {
+            font-size: 14px;
+            margin: 4px 0;
+            text-align: center;
+        }
+
+            .row > .column:nth-child(1) {
+                padding-left: 0;
+            }
+            .row > .column:nth-child(5) {
+                padding-right: 0;
+            }
+            .row > .column:nth-child(6) {
+                padding-left: 0;
+            }
+            .row > .column:nth-child(10) {
+                padding-right: 0;
+            }
+
+        @media screen and (max-width: 1024px) {
+            .row {
+                height: 600px; /*div.tile height 133px*4=532px; do 600px - razmak izmedju plocice */
+                margin: 30px 0;
+            }
+            .column {
+                flex-basis: 33.33%;
+                display: -webkit-box;
+                display: -moz-flexbox;
+                display: -ms-flexbox;
+                display: flex;
+                padding: 0;
+            }
+            .tile {
+                width: 160px; /* 800/5=160px */
+            }
+            .tile-background {
+                height: 106px; /* 533/5=106px */
+            }
+            .row > .column:nth-child(2) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(3) {
+                justify-content: flex-end;
+            }
+            .row > .column:nth-child(4) {
+                justify-content: flex-start;
+            }
+            .row > .column:nth-child(5) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(6) {
+                justify-content: flex-end;
+            }
+            .row > .column:nth-child(7) {
+                justify-content: flex-start;
+            }
+            .row > .column:nth-child(8) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(9) {
+                justify-content: flex-end;
+            }
+            .row > .column:nth-child(10) {
+                justify-content: flex-start;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            h1 {
+                text-align: center;
+            }
+            .tile {
+                width: 180px;
+            }
+            .tile-background {
+                height: 120px;
+            }
+            .row {
+                height: 1600px; /*div.tile height 147px*10=1470px; do 1600px - razmak izmedju plocice */
+            }
+            .column {
+                flex-basis: 100%;
+            }
+            .row > .column:nth-child(1) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(3) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(4) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(6) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(7) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(9) {
+                justify-content: center;
+            }
+            .row > .column:nth-child(10) {
+                justify-content: center;
+            }
+        }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gallery Heading</h1>
+    
+    <div class="row">
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="tile">
+                <div class="tile-background"></div>
+                <div class="tile-text">Image Title</div>
+            </div>
+        </div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+        quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, 
+        rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. 
+        Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, 
+        nim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque 
+        rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. 
+        Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+        blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero 
+        venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet 
+        nibh. Donec sodales sagittis magna. 
+    </p>
+</body>
+</html>
